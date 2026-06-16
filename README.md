@@ -1,16 +1,122 @@
-# React + Vite
+# Coalition Technologies Patient Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based patient dashboard built for the Coalition Technologies Front-End Developer Skills Assessment.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This application consumes the Coalition Technologies Patient Data API and displays medical information for **Jessica Taylor** based on the provided Adobe XD design.
 
-## React Compiler
+The dashboard includes:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Patient sidebar
+* Patient profile information
+* Diagnosis history section
+* Blood pressure chart visualization
+* Respiratory rate, temperature, and heart rate cards
+* Diagnostic list
+* Lab results section
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* Axios
+* Chart.js
+* React Chart.js 2
+* CSS
+
+## API Integration
+
+Data is fetched from the Coalition Technologies Patient Data API using HTTP Basic Authentication.
+
+Only Jessica Taylor's data is displayed in the main dashboard as required by the assessment instructions.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Navigate to the project:
+
+```bash
+cd coalition-patient-dashboard
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+## Production Build
+
+Generate a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Features Implemented
+
+* API integration using Axios
+* Basic Authentication
+* Dynamic patient data rendering
+* Blood pressure line chart
+* Responsive dashboard layout
+* Loading and error handling states
+* Sidebar patient list with active patient highlighting
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Sidebar.jsx
+│   ├── ProfileCard.jsx
+│   ├── BloodPressureChart.jsx
+│   ├── DiagnosisCards.jsx
+│
+├── services/
+│   └── api.js
+│
+├── styles/
+│   └── app.css
+│
+├── App.jsx
+└── main.jsx
+```
+
+## Notes
+
+* Patient information is retrieved from the provided API.
+* The dashboard focuses on Jessica Taylor as specified in the assessment requirements.
+* The chart is implemented using Chart.js.
+* The application was developed using React and Vite.
+
+## Author
+
+Abhinav
