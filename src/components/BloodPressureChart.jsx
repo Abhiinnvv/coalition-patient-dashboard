@@ -20,27 +20,31 @@ ChartJS.register(
 );
 
 function BloodPressureChart({ history }) {
-  const labels = history.map(
+  // Reverse data so oldest month appears first
+  const chartData = [...history].reverse();
+
+  const labels = chartData.map(
     item => `${item.month} ${item.year}`
   );
 
-  const systolic = history.map(
+  const systolic = chartData.map(
     item => item.blood_pressure.systolic.value
   );
 
-  const diastolic = history.map(
+  const diastolic = chartData.map(
     item => item.blood_pressure.diastolic.value
   );
 
   const data = {
     labels,
-
     datasets: [
       {
         label: "Systolic",
         data: systolic,
         borderColor: "#E66FD2",
         backgroundColor: "#E66FD2",
+        pointBackgroundColor: "#E66FD2",
+        pointRadius: 5,
         tension: 0.4
       },
       {
@@ -48,6 +52,8 @@ function BloodPressureChart({ history }) {
         data: diastolic,
         borderColor: "#8B7BEF",
         backgroundColor: "#8B7BEF",
+        pointBackgroundColor: "#8B7BEF",
+        pointRadius: 5,
         tension: 0.4
       }
     ]
@@ -55,7 +61,25 @@ function BloodPressureChart({ history }) {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "top"
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+        grid: {
+          color: "#E5E7EB"
+        }
+      },
+      x: {
+        grid: {
+          display: false
+        }
+      }
+    }
   };
 
   return (

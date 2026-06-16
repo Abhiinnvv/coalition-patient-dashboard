@@ -79,3 +79,83 @@ body {
 .vital-card h2 {
   margin-bottom: 10px;
 }
+.patients-list {
+  margin-top: 20px;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.patient-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  margin-bottom: 10px;
+}
+
+.patient-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.patient-item h4 {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.patient-item p {
+  font-size: 12px;
+  color: gray;
+}
+
+.patient-item.active {
+  background: #d8fff7;
+
+}
+.header {
+  background: white;
+  border-radius: 16px;
+  padding: 15px 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.active-nav {
+  background: #00e6c3;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f6f7f8;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #fafafa;
+}

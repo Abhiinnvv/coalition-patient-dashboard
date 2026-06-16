@@ -23,7 +23,16 @@ function ProfileCard({ patient }) {
       </h2>
 
       <div style={{ marginTop: "20px" }}>
-        <p><strong>DOB:</strong> {patient.date_of_birth}</p>
+        <p><strong>DOB:</strong> {new Date(
+  patient.date_of_birth
+).toLocaleDateString(
+  "en-US",
+  {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }
+)}</p>
         <p><strong>Gender:</strong> {patient.gender}</p>
         <p><strong>Phone:</strong> {patient.phone_number}</p>
         <p><strong>Emergency:</strong> {patient.emergency_contact}</p>
